@@ -1,0 +1,964 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<title>Happy Birthday, Aldi Farkhan! 🤍🩵</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --white: #ffffff;
+  --blue: #b9dcff;
+  --blue-light: #f1f8ff;
+  --blue-dark: #315b7d;
+  --text: #35495a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--text);
+  background: linear-gradient(135deg, #ffffff, #f7fbff, #eaf5ff);
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background:
+    radial-gradient(circle at 15% 15%, #dceeff80, transparent 30%),
+    radial-gradient(circle at 85% 80%, #d2eaff90, transparent 32%),
+    linear-gradient(135deg, #fff, #f4f9ff);
+}
+
+.floating {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.float-item {
+  position: absolute;
+  top: -40px;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(25deg);
+    opacity: .1;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.screen {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 16px;
+  text-align: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 850px;
+  padding: clamp(24px, 5vw, 42px);
+  background: rgba(255,255,255,.9);
+  border: 1px solid white;
+  backdrop-filter: blur(14px);
+  border-radius: 28px;
+  box-shadow: 0 16px 50px #4c81ad20;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.3;
+  margin-bottom: 18px;
+  color: var(--blue-dark);
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: var(--blue-dark);
+}
+
+p {
+  line-height: 1.9;
+  color: #5c6d7b;
+}
+
+button {
+  border: 0;
+  padding: 13px 25px;
+  border-radius: 18px;
+  margin-top: 22px;
+  background: var(--blue);
+  color: #23445e;
+  font-size: .95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .25s;
+  box-shadow: 0 5px 15px #5d9bd320;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background: #a7d2fb;
+}
+
+.typing {
+  max-width: 100%;
+  margin: auto;
+  animation: blink .8s infinite;
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* POLAROID PASSWORD */
+
+.polaroid {
+  width: 220px;
+  max-width: 100%;
+  background: white;
+  padding: 12px 12px 18px;
+  margin: 0 auto 28px;
+  transform: rotate(-2deg);
+  box-shadow: 0 8px 25px #3c648020;
+}
+
+.flower {
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg,#f7fbff,#e5f2ff);
+  font-size: 4rem;
+}
+
+.polaroid p {
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+/* PASSWORD */
+
+.pin-display {
+  width: 250px;
+  max-width: 100%;
+  height: 60px;
+  background: var(--blue-light);
+  border: 1px solid #d9eafa;
+  border-radius: 15px;
+  margin: 22px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  letter-spacing: 10px;
+  color: var(--blue-dark);
+}
+
+.pin-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  gap: 12px;
+  justify-content: center;
+}
+
+.pin-btn {
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  border-radius: 50%;
+  margin: 0;
+  background: white;
+  border: 1px solid #dcecf9;
+}
+
+.error {
+  min-height: 25px;
+  margin-top: 12px;
+  color: #b44f5b;
+  font-size: .9rem;
+}
+
+/* LOADING */
+
+.loader {
+  width: 58px;
+  height: 58px;
+  border: 5px solid #dcecf9;
+  border-top-color: #5d9bd3;
+  border-radius: 50%;
+  margin: 25px auto 0;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ENVELOPE */
+
+.envelope {
+  position: relative;
+  width: min(340px, 85vw);
+  height: 210px;
+  background: #d7eaff;
+  border-radius: 0 0 18px 18px;
+  cursor: pointer;
+  animation: float 3s ease-in-out infinite;
+  box-shadow: 0 15px 30px #4c81ad25;
+  display: grid;
+  place-items: center;
+}
+
+.envelope::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: min(170px, 42.5vw) solid transparent;
+  border-right: min(170px, 42.5vw) solid transparent;
+  border-top: 110px solid #b9dcff;
+}
+
+.envelope-text {
+  position: relative;
+  z-index: 1;
+  font-weight: 700;
+  color: var(--blue-dark);
+  margin-top: 35px;
+}
+
+@keyframes float {
+  50% { transform: translateY(-8px); }
+}
+
+/* FOTO ALDI */
+
+.gallery {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.photo-card {
+  width: 240px;
+  max-width: 100%;
+  padding: 12px 12px 16px;
+  background: white;
+  border-radius: 7px;
+  box-shadow: 0 9px 24px #4c81ad25;
+  transform: rotate(-2deg);
+}
+
+.photo-card img {
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+  background: #edf6ff;
+}
+
+.photo-card p {
+  margin-top: 12px;
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+/* CAKE */
+
+.cake {
+  position: relative;
+  width: 180px;
+  height: 105px;
+  margin: 78px auto 0;
+  background: #b9dcff;
+  border-radius: 14px 14px 4px 4px;
+  box-shadow: inset 0 -10px #5d9bd320;
+}
+
+.cake::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 30px;
+  width: 180px;
+  height: 25px;
+  background: white;
+  border-radius: 8px;
+}
+
+.candle {
+  position: absolute;
+  width: 12px;
+  height: 43px;
+  background: repeating-linear-gradient(
+    45deg, #fff 0 5px, #d8eaff 5px 10px
+  );
+  top: -43px;
+  left: 84px;
+  border-radius: 3px;
+}
+
+.flame {
+  position: absolute;
+  width: 18px;
+  height: 26px;
+  background: #ffc857;
+  border: 2px solid #ffe7a3;
+  border-radius: 50% 50% 50% 0;
+  top: -27px;
+  left: -3px;
+  transform: rotate(-45deg);
+  animation: flicker .18s infinite alternate;
+  cursor: pointer;
+}
+
+@keyframes flicker {
+  to { transform: rotate(-42deg) scale(1.08); }
+}
+
+/* SLIDES */
+
+.slide {
+  display: none;
+  animation: fade .5s ease;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide-emoji {
+  font-size: 3rem;
+  margin-bottom: 8px;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FINAL PHOTO ILAA */
+
+.final-slide {
+  padding: 10px 0;
+}
+
+.final-text {
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  to { transform: scale(1.025); }
+}
+
+.closing-photo {
+  width: 240px;
+  max-width: 100%;
+  margin: 28px auto 0;
+  padding: 12px 12px 18px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 10px 30px #4c81ad30;
+  transform: rotate(-2deg);
+}
+
+.closing-photo img {
+  display: block;
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.closing-photo p {
+  margin-top: 12px;
+  color: #315b7d;
+  font-weight: 600;
+}
+
+.closing-note {
+  margin-top: 25px;
+  font-size: .9rem;
+}
+
+/* PLAYLIST */
+
+.music-player {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffffed;
+  backdrop-filter: blur(12px);
+  padding: 8px 11px;
+  border: 1px solid #e0eefb;
+  border-radius: 24px;
+  z-index: 999;
+  box-shadow: 0 5px 25px #4c81ad25;
+}
+
+.music-player button {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  background: #f1f8ff;
+  font-size: 1.05rem;
+}
+
+.music-player button.playing {
+  background: #b9dcff;
+  box-shadow: 0 0 0 3px #5d9bd324;
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+  .screen {
+    padding: 28px 14px 88px;
+  }
+
+  .card {
+    border-radius: 24px;
+  }
+
+  .photo-card,
+  .closing-photo {
+    width: min(240px, 80vw);
+  }
+
+  .photo-card img,
+  .closing-photo img {
+    height: 270px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+<div class="floating" id="floating"></div>
+<audio id="bg-music" preload="none"></audio>
+
+<!-- PLAYLIST 3 LAGU -->
+
+<div class="music-player">
+  <button id="btn-song0"
+    aria-label="Putar lagu pertama"
+    onclick="playSongAtIndex(0)">🌼</button>
+
+  <button id="btn-song1"
+    aria-label="Putar lagu kedua"
+    onclick="playSongAtIndex(1)">🎧</button>
+
+  <button id="btn-song2"
+    aria-label="Putar lagu ketiga"
+    onclick="playSongAtIndex(2)">🫶</button>
+</div>
+
+<!-- OPENING -->
+
+<section id="opening-screen" class="screen">
+  <div class="card">
+    <div style="font-size:3rem;margin-bottom:12px">
+      🤍🩵
+    </div>
+
+    <h1>HAPPY LEVEL UP, ALDI😎🎂</h1>
+
+    <p class="typing">
+      selamat bertambah umur untuk manusia yang satu ini...
+	  Manusia yang kadang bikin geleng-geleng kepala, hectic mulu, dan entah kenapa punya cita-cita nikah di tengah stresnya kehidupan:v
+	  Anyway, ada sedikit kejutan buat om yang satu ini
+    </p>
+
+    <button onclick="startWebsite()">
+      Open Surprise ✨
+    </button>
+  </div>
+</section>
+
+<!-- PASSWORD: TIDAK ADA FOTO ALDI ATAU ILAA DI SINI -->
+
+<section id="passcode-screen" class="screen hidden">
+  <div class="card">
+
+    <div class="polaroid">
+      <div class="flower">🤍💐</div>
+      <p>Selamat bertambah tua 😭</p>
+    </div>
+
+    <h2>MASUKKAN TANGGAL ULTAH KAMU</h2>
+
+    <p>Petunjuk: empat angka yang harusnya kamu ingat 👀</p>
+
+    <div class="pin-display" id="display"></div>
+
+    <div class="pin-grid">
+      <button class="pin-btn" onclick="press(1)">1</button>
+      <button class="pin-btn" onclick="press(2)">2</button>
+      <button class="pin-btn" onclick="press(3)">3</button>
+
+      <button class="pin-btn" onclick="press(4)">4</button>
+      <button class="pin-btn" onclick="press(5)">5</button>
+      <button class="pin-btn" onclick="press(6)">6</button>
+
+      <button class="pin-btn" onclick="press(7)">7</button>
+      <button class="pin-btn" onclick="press(8)">8</button>
+      <button class="pin-btn" onclick="press(9)">9</button>
+
+      <button class="pin-btn" onclick="clearPin()">C</button>
+      <button class="pin-btn" onclick="press(0)">0</button>
+      <button class="pin-btn" onclick="checkPin()">✓</button>
+    </div>
+
+    <p class="error" id="pin-error"></p>
+  </div>
+</section>
+
+<!-- LOADING -->
+
+<section id="loading-screen" class="screen hidden">
+  <div class="card">
+    <h1>Bentaaarr 😭</h1>
+    <p>Lagi nyiapin kejutan spesial...</p>
+    <div class="loader"></div>
+  </div>
+</section>
+
+<!-- ENVELOPE -->
+
+<section id="envelope-screen" class="screen hidden">
+  <div class="envelope"
+       role="button"
+       tabindex="0"
+       onclick="openEnvelope()"
+       onkeydown="if(event.key==='Enter'||event.key===' '){openEnvelope()}">
+
+    <div class="envelope-text">
+      BUKA SINI WOI 📩
+    </div>
+  </div>
+</section>
+
+<!-- UCAPAN ULANG TAHUN + FOTO ALDI SAJA -->
+
+<section id="main-screen" class="screen hidden">
+  <div class="card">
+
+    <div style="font-size:2rem;margin-bottom:10px">
+      🤍🩵🤍
+    </div>
+
+    <h1>HAPPY BIRTHDAY ALDIII! 😎</h1>
+
+    <p>
+      Barakallahu fii umrik, om!
+	  Semoga selalu diberi kesehatan, dilancarkan rezekinya, dimudahkan segala urusannya, dan satu per satu targetnya tercapai.
+      Semoga Allah selalu menjaga langkahmu, mempertemukanmu dengan banyak hal baik, dan memberi kebahagiaan di setiap proses yang kamu jalani.
+      Keep growing, keep praying, and keep being you! ✨ (emm ada nya foto ini, maap yakk ss tanpa izin). 
+    </p>
+
+    <div class="gallery">
+      <div class="photo-card">
+        <img src="Image/aldi.jpg" alt="Foto Aldi">
+        <p>Birthday boy 😎</p>
+      </div>
+    </div>
+
+    <button onclick="goCake()">
+      Tiup lilinnya 🎂
+    </button>
+
+  </div>
+</section>
+
+<!-- CAKE -->
+
+<section id="cake-screen" class="screen hidden">
+  <div class="card">
+
+    <h1 id="cake-title">Make a Wish ✨</h1>
+
+    <p id="cake-subtitle">
+      Klik apinya, omm 😎
+    </p>
+
+    <div class="cake">
+      <div class="candle">
+        <div class="flame"
+             id="flame"
+             onclick="blowCandle()"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SLIDES PESAN -->
+
+<section id="slides-screen" class="screen hidden">
+  <div class="card">
+
+    <div class="slide active">
+      <div class="slide-emoji">🤝</div>
+      <p>
+        Makasih ya aldi, udah berbagi cerita, pemikiran, dan segala ke-random-an yang kadang bikin geleng-geleng kepala. 
+		Semoga makin banyak hal yang bisa kamu banggakan dari diri sendiri, bukan cuma target yang berhasil kamu capai.
+      </p>
+      <button onclick="nextSlide()">Next</button>
+    </div>
+
+    <div class="slide">
+      <div class="slide-emoji">😉</div>
+      <p>
+        Semoga kamu makin kuat menghadapi segala kesibukan dan ujian yang datang. 
+		Tapi ingat, jangan sibuk mengejar masa depan sampai lupa menjaga diri sendiri. Istirahat juga bagian dari usaha ya Om. 
+      </p>
+      <button onclick="nextSlide()">Next</button>
+    </div>
+
+    <div class="slide">
+      <div class="slide-emoji">💪</div>
+      <p>
+        Semoga capekmu nggak sia-sia, usahamu membuahkan hasil, dan kamu bisa melihat dirimu sendiri tumbuh menjadi seseorang yang selama ini kamu perjuangkan.
+      </p>
+      <button onclick="nextSlide()">Next</button>
+    </div>
+
+    <div class="slide">
+      <div class="slide-emoji">🌤️</div>
+      <p>
+        Semoga suatu hari nanti kita bisa ketemu dan ngobrol
+        langsung, bukan cuma lewat layar.
+      </p>
+      <button onclick="nextSlide()">Next</button>
+    </div>
+
+    <div class="slide">
+      <div class="slide-emoji">💐</div>
+      <p>
+       berikanlah kesehatan jasmani dan rohaninya, lancarkanlah rezekinya, dan kurang-kuranginlah marah-marahnya. Aamiin
+      </p>
+      <button onclick="nextSlide()">Next</button>
+    </div>
+
+    <div class="slide">
+      <div class="slide-emoji">🎧</div>
+      <p>
+        Coba pencet playlist lagunya juga, yaa 😎
+      </p>
+      <button onclick="nextSlide()">Next</button>
+    </div>
+
+    <div class="slide">
+      <div class="slide-emoji">😸</div>
+      <p>
+        Maaf ya, hadiahnya sederhana. Semoga kejutan kecil ini tetap bisa bikin kamu senyum.
+      </p>
+      <button onclick="nextSlide()">Next</button>
+    </div>
+
+    <div class="slide">
+      <div class="slide-emoji">😼</div>
+      <p>
+        Pokoknya, jangan lupa bahagia ya, Om! 
+		Jangan serius-serius kali menjalani hidup WKWKWK 😭
+      </p>
+      <button onclick="nextSlide()">Next</button>
+    </div>
+
+    <!-- SECRET MESSAGE -->
+
+    <div class="slide">
+      <div class="slide-emoji">💌</div>
+
+      <h2>A little message for you</h2>
+
+      <button onclick="showSecret()">
+        Open Secret Message
+      </button>
+
+      <p id="secret-text" style="margin-top:16px"></p>
+
+      <button onclick="nextSlide()">
+        Next
+      </button>
+    </div>
+
+    <!-- SLIDE KHUSUS PENUTUP: FOTO ILAA -->
+
+    <div class="slide final-slide">
+
+      <div style="font-size:2rem;margin-bottom:12px">
+        🤍🩵
+      </div>
+
+      <h1 class="final-text">
+        BARAKALLAHU FII UMRIK ALDIII🎂
+      </h1>
+
+      <p>
+        Semoga Allah selalu menjagamu, di mana pun kamu berada.
+		dah gatau mau ngetik apalagi
+		satu lagi, ga ada crush ku wkwk itu cuma candaan. ga secepat itu perasaanku ilang
+      </p>
+
+      <!-- FOTO ILAA HANYA MUNCUL DI BAGIAN PALING AKHIR -->
+
+      <div class="closing-photo">
+        <img src="Image/dilla.jpg" alt="Foto Ilaa">
+        <p>— from me, dilaa 🤍</p>
+      </div>
+
+      <p class="closing-note">
+        Sampai sini dulu kejutan kecilnya.
+        Jangan lupa senyum hari ini! 🩵
+      </p>
+
+      <p style="margin-top:12px;font-size:.8rem">
+        Made with care 🤍
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+
+/* FLOATING EMOJIS */
+
+function createFloating() {
+  const floating = document.getElementById('floating');
+  const emojis = ['🤍', '🩵', '✨', '🎂', '🦋', '🎧'];
+
+  setInterval(() => {
+    const item = document.createElement('div');
+
+    item.className = 'float-item';
+    item.textContent =
+      emojis[Math.floor(Math.random() * emojis.length)];
+
+    item.style.left = Math.random() * 100 + 'vw';
+    item.style.fontSize =
+      (Math.random() * 12 + 14) + 'px';
+
+    item.style.animationDuration =
+      (Math.random() * 3 + 4) + 's';
+
+    floating.appendChild(item);
+
+    setTimeout(() => item.remove(), 7500);
+  }, 650);
+}
+
+createFloating();
+
+/* PLAYLIST: TETAP TIGA LAGU */
+
+const music = document.getElementById('bg-music');
+
+const playlist = [
+  'mercy.MP3',
+  'jatuh suka.MP3',
+  'perfect.MP3'
+];
+
+let currentTrackIndex = -1;
+
+function playSongAtIndex(index) {
+  if (index < 0 || index >= playlist.length) return;
+
+  currentTrackIndex = index;
+  music.src = playlist[index];
+  music.volume = 0.45;
+
+  playlist.forEach((_, i) => {
+    const button = document.getElementById('btn-song' + i);
+    button.classList.toggle('playing', i === index);
+  });
+
+  music.play().catch(() => {
+    console.log('Tekan tombol lagu untuk memulai musik.');
+  });
+}
+
+/* OTOMATIS LANJUT KE LAGU BERIKUTNYA */
+
+music.addEventListener('ended', () => {
+  playSongAtIndex(
+    (currentTrackIndex + 1) % playlist.length
+  );
+});
+
+/* NAVIGASI HALAMAN */
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(screen => {
+    screen.classList.add('hidden');
+  });
+
+  document.getElementById(id).classList.remove('hidden');
+
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+/* OPENING */
+
+function startWebsite() {
+  showScreen('passcode-screen');
+  playSongAtIndex(0);
+}
+
+/* PASSWORD 2910 */
+
+const PASSWORD = '2910';
+let pinInput = '';
+
+function press(num) {
+  if (pinInput.length >= 4) return;
+
+  pinInput += String(num);
+
+  document.getElementById('display').textContent =
+    '•'.repeat(pinInput.length);
+
+  document.getElementById('pin-error').textContent = '';
+}
+
+function clearPin() {
+  pinInput = '';
+
+  document.getElementById('display').textContent = '';
+  document.getElementById('pin-error').textContent = '';
+}
+
+function checkPin() {
+  if (pinInput === PASSWORD) {
+    showScreen('loading-screen');
+
+    setTimeout(() => {
+      showScreen('envelope-screen');
+    }, 1400);
+
+  } else {
+    document.getElementById('pin-error').textContent =
+      'Hmm, belum tepat. Coba ingat lagi 👀';
+
+    pinInput = '';
+    document.getElementById('display').textContent = '';
+  }
+}
+
+/* AMPLop */
+
+function openEnvelope() {
+  showScreen('main-screen');
+}
+
+/* KUE ULANG TAHUN */
+
+function goCake() {
+  showScreen('cake-screen');
+}
+
+function blowCandle() {
+  document.getElementById('flame').style.display = 'none';
+
+  document.getElementById('cake-title').textContent =
+    'Wish made! ✨';
+
+  document.getElementById('cake-subtitle').textContent =
+    'Apa pun harapanmu, semoga Allah memberikan yang terbaik, di waktu yang tepat, dan dengan cara yang paling baik 🤍';
+
+  setTimeout(() => {
+    currentSlide = 0;
+    showScreen('slides-screen');
+  }, 1700);
+}
+
+/* PERGANTIAN SLIDE */
+
+let currentSlide = 0;
+
+function nextSlide() {
+  const slides = Array.from(
+    document.querySelectorAll('.slide')
+  );
+
+  if (currentSlide >= slides.length - 1) return;
+
+  slides[currentSlide].classList.remove('active');
+
+  currentSlide++;
+
+  slides[currentSlide].classList.add('active');
+
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+/* SECRET MESSAGE */
+
+function showSecret() {
+  document.getElementById('secret-text').textContent =
+    'Ada beberapa hal yang mungkin ga selalu bisa disampaikan lewat obrolan biasa. ' +
+    'Tapi untuk hari ini, aku cuma mau berharap semoga hidup selalu punya cara baik untuk mempertemukanmu dengan kebahagiaan, ketenangan, dan hal-hal yang selama ini kamu usahakan. ' +
+    'Terima kasih udah jadi bagian dari beberapa cerita yang akan kuingat sebagai bagian dari perjalanan hidupku. ' +
+	'Sisanya, cukup aku dan Allah yang tau. 😌🤍' +
+	'Once again, happy birthday aldii ' +
+    'You deserve good things too.';
+}
+
+</script>
+</body>
+</html>
